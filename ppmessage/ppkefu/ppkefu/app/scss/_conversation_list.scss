@@ -1,0 +1,52 @@
+.yv-conversation-list-view {
+    .filter-bar {
+        border: none;
+        top: 49px;        
+        position: absolute;
+        width: 100%;
+        height: 49px;
+        margin: 0;
+        background-color: #2e3238;
+        color: #fff;
+        
+        .filter-item {
+            cursor: pointer;
+            font-size: medium;
+            font-weight: 500;
+            margin-right: 7px;
+            input {
+                cursor: pointer;
+                font-size: 100%;
+                margin-left: 4px;
+            }
+        }
+    }
+    
+    .has-filter-bar {
+        top: 98px !important;        
+    }
+
+    .yv-conversation-list {
+        transition: all 0.5s linear;        
+    }
+    
+    &:not(.in-mobile) .yv-conversation-item {
+        @include yv-item();
+    }
+    
+    &.in-mobile {
+        .filter-bar {
+            top: 44px;
+            background-color: $dark;
+        }
+        .has-filter-bar {
+            top: 93px !important;
+        }         
+    }    
+}
+
+.platform-ios.platform-cordova:not(.fullscreen) .yv-conversation-list-view {
+    .filter-bar, .has-filter-bar {
+        margin-top: 19px !important;
+    }
+}
